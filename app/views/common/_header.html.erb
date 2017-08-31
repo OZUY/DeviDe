@@ -1,0 +1,27 @@
+<% if user_signed_in? %>
+  <div class='navbar navbar-default navbar-fixed-top'>
+    <div class='container'>
+      <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-responsive-collapse'>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <%= link_to root_path, :class => 'navbar-brand' do %>
+         <small class='hidden-xs hidden-sm'>近くの大学生と知り合おう！</small>
+      <% end %>
+      <div class='navbar-collapse collapse navbar-responsive-collapse navbar-right'>
+        <ul class='nav navbar-nav'>
+          <li><%= link_to 'HOME', root_path %></li>
+          <li class='dropdown'>
+            <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-expanded='false'>メニュー <span class='caret'></span></a>
+            <ul class='dropdown-menu' role='menu'>
+              <li><%= link_to "マイページ", user_path(current_user) %></li>
+              <li><%= link_to "マイページ編集", edit_user_path(current_user) %></li>
+              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<% end %>
