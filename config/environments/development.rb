@@ -22,8 +22,13 @@ Rails.application.configure do
   :address => "smtp.gmail.com",
   :port => 587,
   :domain => 'smtp.gmail.com',
+<<<<<<< HEAD
   :user_name => "@gmail.com", #ご自身のgmailアドレス
   :password => "", #ご自身のgmailアドレスのパスワード
+=======
+  :user_name => "@gmail.com", #gmailアドレス
+  :password => "", #gmailアドレスのパスワード
+>>>>>>> 71746614c16d3fc66631132848fb50c41d9d5bd5
   :authentication => 'login'
 }
 
