@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
 
   def create
   Message.create(create_params)
-  redirect_to :root and return
+  redirect_to user_path(current_user) and return
 end
 
 private

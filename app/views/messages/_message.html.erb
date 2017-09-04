@@ -1,0 +1,15 @@
+<div class="question_content top_content">
+  <header class="question_header">
+    <div class="question_image icon_image" style="background-image: url(<%= message.user.avatar.url(:medium) %>);"></div>
+    <div class="question_user_info user_info">
+      <span><%= link_to message.user.name, user_path(message.user) %></span>
+      <time><%= time_ago_in_words message.created_at %></time>
+    </div>
+  </header>
+  <div class="question_body">
+    <div class="question_box">
+      <span class="q">Q</span>
+      <span class="question_text"><%= message.text %></span>
+    </div>
+  </div>
+</div>

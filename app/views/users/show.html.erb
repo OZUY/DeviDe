@@ -118,7 +118,7 @@
     <%= f.submit "質問する" %>
   <% end %>
   </div>
-  
+  <%= render partial: "messages/message", collection: @messages %>
 
 <!-- /message -->
 
