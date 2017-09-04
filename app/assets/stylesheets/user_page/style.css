@@ -680,3 +680,122 @@ a.btn:hover {
 	}
 
 }
+
+.top_content {
+  @include baseBox(10px auto 20px,10px);
+  background-color: rgba(#fff,0.93);
+  box-shadow: 0 3px 5px rgba(#000,.1);
+  header {
+    display: table;
+  }
+  .icon_image {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    display: table-cell;
+  }
+  .user_info {
+    display: inline-block;
+    margin-left: 10px;
+    time {
+      color: $gray;
+      font-size: .8em;
+      display: block;
+    }
+  }
+  &.posting_form {
+    margin-top: 20px;
+    form {
+      input[type="text"] {
+        border: 0;
+        font-size: 1.4em;
+        width: 80%;
+        line-height: 40px;
+        margin-top: 5px;
+      }
+      input[type="submit"] {
+        width: 18%;
+        position: relative;
+        top: -5px;
+      }
+    }
+  }
+  .answerd {
+    @include baseBox(10px auto ,0);
+  }
+  .answer_box {
+    background-color: #f9f9f9;
+    border-radius: 100px;
+    // margin-bottom: 10px;
+    .a {
+      background-color: $base;
+      color: #fff;
+      width: 40px;
+      line-height: 40px;
+      text-align: center;
+      display: inline-block;
+      border-radius: 50%;
+      letter-spacing: 0;
+    }
+    .answer_text {
+      font-size: 1.2em;
+    }
+  }
+  .answer_other {
+    @include baseBox(10px auto 0, 10px 0 0);
+    border-top: 1px solid lighten($gray,40%);
+    text-align: center;
+    a {
+      display: inline-block;
+      border: 2px solid #eee;
+      padding: 5px 10px 3px;
+      color: $gray;
+      &:hover {
+        background-color: lighten($gray,40%);
+      }
+    }
+  }
+  .question_box {
+    @include baseBox(15px auto ,0);
+    .q {
+      background-color: $accent;
+      color: #fff;
+      width: 40px;
+      line-height: 40px;
+      text-align: center;
+      display: inline-block;
+      letter-spacing: 0;
+    }
+    .question_text {
+      font-size: 1.2em;
+    }
+  }
+  .question_submit {
+    margin-top: 10px;
+    input {
+      background-color: $base;
+      padding: 10px 0;
+      width: 100%;
+      &.disabled {
+        background-color: #ccc !important;
+      }
+    }
+  }
+}
+.pagination-nav {
+  display: block;
+}
+.pagination {
+  display: inline-block;
+  margin-bottom: 20px;
+  & > li > a {
+    color: $base;
+  }
+  & >.active>a, & >.active>span, & >.active>a:hover, & >.active>span:hover, & >.active>a:focus, & >.active>span:focus {
+    background-color: $base;
+    border-color: $base;
+  }
+  &>li>a:hover, &>li>span:hover, &>li>a:focus, &>li>span:focus {
+      color: $base;
+  }
+}

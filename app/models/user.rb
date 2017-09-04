@@ -10,8 +10,12 @@ class User < ActiveRecord::Base
          :validatable, :confirmable,
          authentication_keys: [:email, :univ_key]
 
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>"}
+  validates_attachment_content_type :avatar, content_type: ["image/jpg","image/jpeg","image/png"]
+
   #association
   belongs_to :univ
+  has_many :messages, ->{ order("created_at DESC")}
 
   #validation
   before_validation :univ_key_to_id, if: :has_univ_key?
@@ -38,8 +42,12 @@ class User < ActiveRecord::Base
   end
   def name_kana
     "#{family_name_kana} #{first_name_kana}"
-
   end
+
+  def full_profile?
+    avatar? && family_name? && first_name? && family_name_kana? && first_name_kana?
+  end
+
 
   private
   def has_univ_key?

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DeviDe</title>
+</head>
+<body>
+  <h2>今日のいいねランキング</h2>
+
+  <% unless current_user.full_profile? %>
+  <header class="header_top panel panel-default col-lg-12 no-profile">
+    <h2>まずはあなたのマイページを作りましょう！</h2>
+    <p>DeviDeは大学内の友人を作るサービスです</p>
+    <%= link_to "マイページを作る", edit_user_path(current_user), {class: "btn btn-lg btn-primary withripple"} %>
+  </header>
+  <% else %>
+
+  <% end %>
+
+</body>
+</html>
